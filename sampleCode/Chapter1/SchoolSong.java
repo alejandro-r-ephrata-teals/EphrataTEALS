@@ -9,5 +9,7 @@ public class SchoolSong {
         System.out.println("E - P - H - R - A - T - A");
         System.out.println("Fight on, fight on, it's victory tonight");
         System.out.println("Fight on, fight on, Ephrata Tigers fight");
+           
     }
+    
 }
