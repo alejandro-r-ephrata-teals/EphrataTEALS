@@ -73,14 +73,14 @@ public class Rocket {
 
     }
     public static void UpArrow() {
-        System.out.println("/ \\");
-        System.out.println("/  \\");
-        System.out.println("/   \\");
+        System.out.println("   /\\");
+        System.out.println("  /  \\");
+        System.out.println(" /    \\");
     }
     public static void DownArrow() {
-        System.out.println("\\  /");
-        System.out.println("\\ /");
-        System.out.println("\\/");
+        System.out.println(" \\    /");
+        System.out.println("  \\  /");
+        System.out.println("   \\/");
     }
     public static void Box() {
         System.out.println("+------+");
