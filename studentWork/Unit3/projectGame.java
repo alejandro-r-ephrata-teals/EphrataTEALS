@@ -16,19 +16,32 @@ public class projectGame {
         int points1 = 0;
         int points2 = 0;
 
+        int player1Roll = 0;
+        int player2Roll = 0;
+
+        int checkSameRoll1 = player1Roll;
+        int checkSameRoll2 = player2Roll;
+    
+
         while (points1 < 10 || points2 < 10){
-        System.out.print("Ok, player 1 please type \"!roll\" ");    //Must set a another variable == to the players rolls, then check every time to see if the previous roll was the same
+        System.out.print( player1 + " please type \"!roll\" ");    //Must set a another variable == to the players rolls, then check every time to see if the previous roll was the same
         String roll1 = console.nextLine();
-        int player1Roll = (int)(Math.random() * 6) + 1; 
+        player1Roll = (int)(Math.random() * 6) + 1; 
+        System.out.println();
         System.out.println(player1 + " rolled " + player1Roll);
 
-        System.out.print("Ok, Player 2 please type \"!roll\" ");
+        System.out.print(player2 + " please type \"!roll\" ");
         String roll2 = console.nextLine();
-        int player2Roll = (int)(Math.random() * 6) + 1;
+        player2Roll = (int)(Math.random() * 6) + 1;
+        System.out.println();
         System.out.println(player2 + " rolled " + player2Roll);
+        System.out.println();
+
+
         
 
         if (roll1.equals("!roll") & roll2.equals("!roll")){
+
 
             
             if (player1Roll > player2Roll){
@@ -38,6 +51,9 @@ public class projectGame {
                 System.out.println(player1 + " Wins this round with a roll of " + player1Roll );
                 System.out.println();
                 System.out.println(player1 + " Now has " + points1 + " point(s)");
+                System.out.println();
+
+                
 
             } else if(player2Roll > player1Roll) {
 
@@ -46,6 +62,7 @@ public class projectGame {
                 System.out.println(player2 + " Wins this round with a roll of " + player2Roll );
                 System.out.println();
                 System.out.println(player2 + " Now has " + points2 + " point(s)");
+                System.out.println();
 
             } else if (player1Roll == player2Roll) {
 
@@ -53,12 +70,32 @@ public class projectGame {
                 points2 = (int)(Math.random() * 2) + 1 + points2;
 
                 System.out.println("You both tied!");
+                System.out.println();
                 System.out.println(player1 + " Has " + points1 + " Point(s)");
                 System.out.println();
                 System.out.println(player2 + " Has " + points2 + " Point(s)");
+                
 
 
             }
+
+            
+
+            if (player1Roll == checkSameRoll1 ){
+
+                points1 -= 1;
+                System.out.println( player1 + " You had the same roll twice, therefore you loose 1 point Haha :)" + " You now have " + points1 + " point(s)");
+
+            } else if (player2Roll == checkSameRoll2) {
+
+                points2 -=1;
+                System.out.println( player2 + " You had the same roll twice, therefore you loose 1 point Haha :)" + " You now have " + points2 + " point(s)");
+
+            }
+
+            checkSameRoll1 = player1Roll;
+            checkSameRoll2 = player2Roll;
+
 
 
         } else {
