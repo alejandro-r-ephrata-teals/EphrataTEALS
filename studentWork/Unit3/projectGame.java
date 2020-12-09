@@ -93,7 +93,7 @@ public class projectGame {
 
                 points2++;
 
-                System.out.println(player1 + " Wins this round" );
+                System.out.println(player2 + " Wins this round" );
                 System.out.println();
                 System.out.println("  " + initialsOfPlayer1 + "   " + initialsOfPlayer2);
                 System.out.println("---------");
