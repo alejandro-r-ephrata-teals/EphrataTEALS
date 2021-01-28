@@ -1,10 +1,10 @@
-package studentWork.Work;
+package studentWork.Unit3;
 
 import java.util.Random;
 
 import java.util.Scanner;
 
-public class Work {
+public class RandomLab {
     
     
     public static void main(String args[]) {
@@ -41,14 +41,23 @@ public class Work {
                 
             int dart1 = rand.nextInt(4) + 2;
             int dart2 = rand.nextInt(4) + 2;
-            int dart3 = rand.nextInt(4) + 2;
+            int dart3 = rand.nextInt(4) + 2;;
+            System.out.println();
             System.out.println("Now a dice will be rolled");
+            System.out.println();
             int diceRoll = rand.nextInt(20) + 1;
             System.out.println("You rolled " + diceRoll);
+            System.out.println();
 
             if (diceRoll >= 10){
+                
                 System.out.println("All three of your darts hit with a damage of " + (dart1 + dart2 + dart3));
-            } else {
+            } else if (diceRoll <= 9 && diceRoll >= 5){
+
+                System.out.println("only 2 Darts hit with a damage of " + (dart1 + dart2));
+
+            }
+             else {
                 System.out.println("Your spell did not hit!");
             }
             
