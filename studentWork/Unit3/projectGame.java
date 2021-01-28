@@ -25,6 +25,12 @@ public class projectGame {
         int player1StartingBets = 100;
         int player2StartingBets = 100;
 
+        System.out.print("How many games do you want to play? ");
+        int games = console.nextInt();
+        String space2 = console.nextLine();
+
+        for(int i = 1; i <= games; i++){
+
         boolean quit = false;
 
         //USER INTERACTION
@@ -35,10 +41,21 @@ public class projectGame {
         String player2 = console.nextLine();
         System.out.println();
         // This will be the users input, they willl type in their names in order to organize the game a little more
-        System.out.print(player1 + "place a bet from 1-100 ");
+        System.out.print(player1 + " place a bet from 1-100 ");
         int player1Bet = console.nextInt();
-        System.out.print(player2 + "place a bet from 1-100 ");
+        System.out.print(player2 + " place a bet from 1-100 ");
         int player2Bet = console.nextInt();
+        System.out.println();
+
+        if (player1StartingBets == 0) {
+            System.out.println(player1 + " You dont have any money! but you will continue");
+            player1Bet = 0; 
+        } else if (player2StartingBets == 0){
+            System.out.println(player2 + " You dont have any money! but you will continue");
+            player2Bet = 0;
+        }
+
+        String Space  = console.nextLine();
 
         int points1 = 0;
         int points2 = 0;
@@ -156,12 +173,12 @@ public class projectGame {
 
     }   if (quit == true){
         System.out.println();
-        System.out.println("██╗░░░██╗░█████╗░██╗░░░██╗   ██████╗░░█████╗░████████╗██╗░░██╗   ░██████╗░██╗░░░██╗██╗████████╗  ██╗░░░░░░█████╗░░██████╗███████╗██████╗░░██████╗");
-        System.out.println("╚██╗░██╔╝██╔══██╗██║░░░██║   ██╔══██╗██╔══██╗╚══██╔══╝██║░░██║   ██╔═══██╗██║░░░██║██║╚══██╔══   ██║░░░░░██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════");
-        System.out.println("░╚████╔╝░██║░░██║██║░░░██║   ██████╦╝██║░░██║░░░██║░░░███████║   ██║██╗██║██║░░░██║██║░░░██║░░░  ██║░░░░░██║░░██║╚█████╗░█████╗░░██████╔╝╚█████╗░");
-        System.out.println("░░╚██╔╝░░██║░░██║██║░░░██║   ██╔══██╗██║░░██║░░░██║░░░██╔══██║   ╚██████╔╝██║░░░██║██║░░░██║░░░  ██║░░░░░██║░░██║░╚═══██╗██╔══╝░░██╔══██╗░╚═══██╗");
-        System.out.println("░░░██║░░░╚█████╔╝╚██████╔╝   ██████╦╝╚█████╔╝░░░██║░░░██║░░██║   ░╚═██╔═╝░╚██████╔╝██║░░░██║░░   ███████╗╚█████╔╝██████╔╝███████╗██║░░██║██████╔╝");
-        System.out.println("░░░╚═╝░░░░╚════╝░░╚═════╝░   ╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝   ░░░╚═╝░░░░╚═════╝░╚═╝░░░╚═╝░░   ╚══════╝░╚════╝░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░");
+        System.out.println("██╗░░░██╗░█████╗░██╗░░░██╗     ░██████╗░██╗░░░██╗██╗████████╗  ██╗░░░░░░█████╗░░██████╗███████╗██████╗░░██████╗");
+        System.out.println("╚██╗░██╔╝██╔══██╗██║░░░██║     ██╔═══██╗██║░░░██║██║╚══██╔══   ██║░░░░░██╔══██╗██╔════╝██╔════╝██╔══██╗██╔════");
+        System.out.println("░╚████╔╝░██║░░██║██║░░░██║     ██║██╗██║██║░░░██║██║░░░██║░░░  ██║░░░░░██║░░██║╚█████╗░█████╗░░██████╔╝╚█████╗░");
+        System.out.println("░░╚██╔╝░░██║░░██║██║░░░██║     ╚██████╔╝██║░░░██║██║░░░██║░░░  ██║░░░░░██║░░██║░╚═══██╗██╔══╝░░██╔══██╗░╚═══██╗");
+        System.out.println("░░░██║░░░╚█████╔╝╚██████╔╝     ░╚═██╔═╝░╚██████╔╝██║░░░██║░░   ███████╗╚█████╔╝██████╔╝███████╗██║░░██║██████╔╝");
+        System.out.println("░░░╚═╝░░░░╚════╝░░╚═════╝░     ░░░╚═╝░░░░╚═════╝░╚═╝░░░╚═╝░░   ╚══════╝░╚════╝░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░");
     }
 
        
@@ -176,10 +193,19 @@ public class projectGame {
             System.out.println(" █     █     █   █   █   █     █   █      ██      █   █   █ █   █   ██ ██   █   █  ██ ");
             System.out.println(" █     █████ █   █   █   █████ █   █   ████████   █    ███  █████   █   █ █████ █   █ ");
             System.out.println();
+
             player1StartingBets = player1StartingBets + player2Bet;
             player2StartingBets = player2StartingBets - player2Bet;
+
+            if (player2StartingBets < 0 ){
+                System.out.println(player2 + " you have NO MONEY LEFT therefore you cannot bet anymore, but we'll let you play");
+
+                player2StartingBets = 0;
+
+            }
+
             System.out.println(player1 + "you now have " + player1StartingBets);
-            System.out.println(player1 + "you now have " + player2StartingBets);
+            System.out.println(player2 + "you now have " + player2StartingBets);
 
         } else if (points2 > points1) {
 
@@ -191,8 +217,25 @@ public class projectGame {
             System.out.println(" █     █     █   █   █   █     █   █     ██         █   █   █ █   █   ██ ██   █   █  ██ ");
             System.out.println(" █     █████ █   █   █   █████ █   █    ███████     █    ███  █████   █   █ █████ █   █ ");
             System.out.println();
+
+            if (player2StartingBets < 0 ){
+                System.out.println(player2 + " you have NO MONEY LEFT therefore you cannot bet anymore, but we'll let you play");
+
+                player2StartingBets = 0;
+
+            }
+
+
             player1StartingBets = player1StartingBets - player1Bet;
             player2StartingBets = player2StartingBets + player2Bet;
+
+            if (player1StartingBets < 0 ){
+                System.out.println(player1 + " you have NO MONEY LEFT therefore you cannot bet anymore, but we'll let you play");
+
+                player1StartingBets = 0;
+
+            }
+
             System.out.println(player1 + "you now have " + "$ " + player1StartingBets);
             System.out.println(player2 + "you now have " + "$ " + player2StartingBets);
 
@@ -211,6 +254,8 @@ public class projectGame {
         } 
 
     }
+}
+
 
 
     //PROCEDURAL DECOMPOSITION
@@ -257,5 +302,4 @@ public static <Char> void pointsTable(Char Player1, Char Player2, int points1, i
 
     
         
-
-    }
+}
