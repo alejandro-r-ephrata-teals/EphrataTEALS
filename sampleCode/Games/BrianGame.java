@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 package sampleCode.Games;// YAHTZEE programmed by Brian Rogers.
+=======
+package sampleCode.Games;
+
+// YAHTZEE programmed by Brian Rogers.
+>>>>>>> 1a7f2409013bdc8d00e378de85b72ae16e4349dc
 // For rules, see `printHelp`.
 import java.util.Scanner;
 
