@@ -12,17 +12,7 @@ public class Deck {
         this.cardDeck = new Card[values.length * suits.length];
         this.cardIndex = 0;
 
-        for( int value: values) {
-
-            for( String suit: suits){
-                Card card = new Card(value, suit);
-                cardDeck[cardIndex] = card;
-                cardIndex++;
-                
-
-            }
-
-        }
+       initilizeCards(suits, values);
 
     }
 
@@ -35,28 +25,32 @@ public class Deck {
         
         this.cardDeck = new Card[52];
 
-        for(String suit: suits){
-
-            for(int value: values) {
-                cardDeck[cardIndex] = new Card(value, suit);
-                cardIndex++;
-
-            }
-
-        }
+        initilizeCards(suits, values);
 
         }
     
     public String toString(){
+
+        String a = "A deck of " + cardDeck.length + " with a top card of " + Draw(cardDeck);
+        return a;
     
 
 
     }
        
-    private void initilize() {
-        
+    private void initilizeCards(String[] suits, int[] values) {
 
-           
+        for( int value: values) {
+
+            for( String suit: suits){
+                Card card = new Card(value, suit);
+                cardDeck[cardIndex] = card;
+                cardIndex++;
+                
+
+            }
+
+        }
         
 
     }
@@ -81,7 +75,25 @@ public class Deck {
         return false; 
     }
 
-    public String Draw(){
+    public Card Draw(Card[] cardDeck) {
+
+        Card a = cardDeck[0];
+
+        for(int i = 0;  i < cardDeck.length - 1; i++) {
+            cardDeck[i] = cardDeck[i + 1];
+
+        }
+        cardDeck[cardDeck.length - 1] = a;
+
+        return a;
+
+
+
+
+
+    }
+
+    public void discard(Card[] input){
 
     }
 

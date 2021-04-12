@@ -6,7 +6,7 @@ public class CardClient {
 
     public static void main (String[] args) {
 
-        int[] values = {4, 5, 6};
+        int[] values = {4, 5, 7};
         String[] suits = {"Hearts", "Spades"};
 
         Card queen = new Card (12, "dimonds");
@@ -17,9 +17,11 @@ public class CardClient {
 
         Card ace = new Card(1, "Clubs");
 
-        System.out.println(queen + ", " + hearts + ", " + ", " + ace);
+        System.out.println(queen + ", " + hearts + ", " + ace);
 
         Deck a = new Deck(values, suits);
+        System.out.println(a);
+        
         
         
         
