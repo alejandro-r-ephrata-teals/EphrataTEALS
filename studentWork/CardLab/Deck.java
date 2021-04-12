@@ -44,8 +44,8 @@ public class Deck {
 
             for( String suit: suits){
                 Card card = new Card(value, suit);
-                cardDeck[cardIndex] = card;
-                cardIndex++;
+                this.cardDeck[cardIndex] = card;
+                this.cardIndex++;
                 
 
             }
@@ -90,10 +90,11 @@ public class Deck {
 
 
 
-
     }
 
     public void discard(Card[] input){
+
+        Card first = card
 
     }
 

@@ -2,30 +2,30 @@ package studentWork.Unit7;
 
 public class MetroTicket {
     private int[] rides;
-    private int punches;
 
     // Initializes a fresh metro ticket with a given number of rides.
     public MetroTicket(int numberOfRides) {
         // Start with a fresh ticket, no punches
-        punches = 0; //punches = 0;
+        //punches = 0;
 
         // Initialize the rides [1, 2, 3, ...]
         rides = new int[numberOfRides];
         for (int i = 0; i < numberOfRides; i++) {
             rides[i] = numberOfRides - i ; //rides[i] = i + 1;
         }
+    
     }
 
     // Checks if we have any rides left.
     public boolean hasRides() {
-        return punches < rides.length; // punches < rides.length;
+        return  rides[0] != 0; // punches < rides.length;
     }
 
     // Punches the next ride number on the card (if any).
     public void punch() {
         // Check first if there are still any rides left
         if (hasRides()) {
-            punches++;
+           
 
             // Shift all values to the left
             // e.g. [1, 2, 3] --> [2, 3, 3]
@@ -35,7 +35,7 @@ public class MetroTicket {
 
             // "Punch" the extra entry by marking it as 0
             // e.g. [2, 3, 3] --> [2, 3, 0]
-            rides[rides.length - punches] = 0;
+            rides[rides.length - 1] = 0; 
         }
     }
 
