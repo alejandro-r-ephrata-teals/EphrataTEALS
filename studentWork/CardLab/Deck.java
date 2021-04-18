@@ -5,18 +5,20 @@ import java.util.Arrays;
 public class Deck {
 
     private Card[] cardDeck;
-    private int cardIndex = 0;
+    private int cardIndex;
 
     public Deck(int[] values, String[] suits) {
 
-        this.cardDeck = new Card[values.length * suits.length];
+
         this.cardIndex = 0;
 
        initilizeCards(suits, values);
 
+
     }
 
     public Deck(){
+
         this.cardIndex = 0;
 
         String[] suits = {"Spades", "Hearts", "Dimond", "Clubs"};
@@ -31,7 +33,8 @@ public class Deck {
     
     public String toString(){
 
-        String a = "A deck of " + cardDeck.length + " with a top card of " + Draw(cardDeck);
+        String a = "A deck of " + this.cardDeck.length + " with a top card of " + Draw();
+        this.cardIndex = 0;
         return a;
     
 
@@ -40,27 +43,32 @@ public class Deck {
        
     private void initilizeCards(String[] suits, int[] values) {
 
+        this.cardDeck = new Card[values.length * suits.length];
+
         for( int value: values) {
 
             for( String suit: suits){
                 Card card = new Card(value, suit);
-                this.cardDeck[cardIndex] = card;
+                this.cardDeck[this.cardIndex] = card;
                 this.cardIndex++;
                 
 
             }
 
         }
+        this.cardIndex = 0;
         
 
     }
 
-    public void shuffle(){
+    public Card[] shuffle(){
 
         CardShuffler shuffle = new CardShuffler();
 
-        shuffle.shuffle(cardDeck);
-        
+    
+        this.cardDeck = shuffle.shuffle(cardDeck);
+
+        return this.cardDeck;
 
         
             
@@ -68,35 +76,45 @@ public class Deck {
 
     public boolean hasNext(){
 
-        if(cardDeck.length > cardIndex){
-            return true;
+        if(this.cardIndex >= this.cardDeck.length){
+            return false;
         }
         
-        return false; 
+        return true; 
     }
 
-    public Card Draw(Card[] cardDeck) {
+    public Card Draw() { 
 
-        Card a = cardDeck[0];
+        Card a = this.cardDeck[this.cardIndex];
 
-        for(int i = 0;  i < cardDeck.length - 1; i++) {
+        this.cardIndex++;
+
+     /*   for(int i = 0;  i < cardDeck.length - 1; i++) {
             cardDeck[i] = cardDeck[i + 1];
-
-        }
-        cardDeck[cardDeck.length - 1] = a;
+        } */
+        //cardDeck[cardDeck.length - 1] = a;
 
         return a;
+    }
 
+    public void discard(Card input){
 
+        for(int i = 0;  i < this.cardDeck.length - 1; i++) {
 
+            this.cardDeck[i] = this.cardDeck[i + 1];
+
+        }
+        this.cardDeck[this.cardDeck.length - 1] = input;
 
     }
 
-    public void discard(Card[] input){
-
-        Card first = card
-
+    public void print() {
+        for(Card card: this.cardDeck) {
+            System.out.println(card);
+        }
     }
+
+
 
   
     }
