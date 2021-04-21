@@ -1,4 +1,4 @@
-package studentWork.CardLab;
+package studentWork.Unit8.CardLabPartII;
 
 import java.util.Arrays;
 
@@ -86,12 +86,12 @@ public class Deck {
     public Card Draw() { 
 
         Card a = this.cardDeck[this.cardIndex];
-        this.cardIndex++;
+       
 
-        /* for(int i = 0;  i < this.cardDeck.length - 1; i++) {
+        for(int i = 0;  i < this.cardDeck.length - 1; i++) {
             this.cardDeck[i] = this.cardDeck[i + 1];
-        } */
-        //cardDeck[cardDeck.length - 1] = a;
+        } 
+        
 
         return a;
     }

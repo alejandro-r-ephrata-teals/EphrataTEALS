@@ -1,4 +1,4 @@
-package studentWork.CardLab;
+package studentWork.Unit8.CardLabPartII;
 
 import java.util.Arrays;
 
@@ -54,7 +54,7 @@ public class CardClient {
           System.out.println(secondCard + " has a higher value");
         }
 
-        //discard(secondCard);
+        discard(secondCard);
 
         
 
@@ -67,6 +67,8 @@ public class CardClient {
         
         
     }
+
+    
 
     
     
