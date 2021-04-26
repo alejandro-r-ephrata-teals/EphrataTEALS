@@ -1,4 +1,4 @@
-package studentWork.Unit8.CardLabPartII;
+package studentWork.CardLab;
 
 import java.util.Arrays;
 
@@ -33,7 +33,7 @@ public class Deck {
     
     public String toString(){
 
-        String a = "A deck of " + this.cardDeck.length + " with a top card of " + Draw();
+        String a = "A deck of " + this.cardDeck.length + " with a top card of " + cardDeck[0];
         this.cardIndex = 0;
         return a;
     
@@ -86,12 +86,11 @@ public class Deck {
     public Card Draw() { 
 
         Card a = this.cardDeck[this.cardIndex];
-       
 
         for(int i = 0;  i < this.cardDeck.length - 1; i++) {
             this.cardDeck[i] = this.cardDeck[i + 1];
         } 
-        
+       
 
         return a;
     }

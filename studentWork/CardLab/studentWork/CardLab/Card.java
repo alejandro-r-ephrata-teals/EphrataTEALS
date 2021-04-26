@@ -1,4 +1,4 @@
- package studentWork.Unit8.CardLabPartII;
+package studentWork.CardLab;
 
 public class Card {
 
