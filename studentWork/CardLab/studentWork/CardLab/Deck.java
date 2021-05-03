@@ -25,7 +25,34 @@ public class Deck {
         initilizeCards(suits, values);
 
         }
+
+    public Deck(ArrayList<Card> cardDeck){
+
+        this.cardDeck = cardDeck;
+
+    }
+
+    public Deck deal(int numberOfCards) {
+
+        ArrayList<Card> newDeck = new ArrayList<Card>();
+
+        for(int i = 0; numberOfCards > i; i++){
+            Card remove = this.cardDeck.remove(0);
+            newDeck.add(remove);
+        }
+        Deck finalDeck = new Deck(newDeck);
+
+        return finalDeck;
+
+    }
+
+    public int size() {
+
+        return this.cardDeck.size();
+    }
     
+
+
     public String toString(){
 
         String a = "A deck of " + this.cardDeck.size() + " with a top card of " + this.cardDeck.get(0);
@@ -35,6 +62,7 @@ public class Deck {
 
 
     }
+    
        
     private void initilizeCards(String[] suits, int[] values) {
 
@@ -71,7 +99,6 @@ public class Deck {
         if( this.cardDeck.size() > 0){
             return true;
         }
-        
         return false; 
     }
 
