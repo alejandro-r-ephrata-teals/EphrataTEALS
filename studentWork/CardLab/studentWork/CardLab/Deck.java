@@ -11,7 +11,6 @@ public class Deck {
     public Deck(int[] values, String[] suits) {
 
        initilizeCards(suits, values);
-
     }
 
     public Deck(){
@@ -23,18 +22,16 @@ public class Deck {
         this.cardDeck = new ArrayList<Card>(52);
 
         initilizeCards(suits, values);
-
         }
 
     public Deck(ArrayList<Card> cardDeck){
 
         this.cardDeck = cardDeck;
-
     }
 
     public Deck deal(int numberOfCards) {
 
-        ArrayList<Card> newDeck = new ArrayList<Card>();
+        ArrayList<Card>newDeck = new ArrayList<Card>();
 
         for(int i = 0; numberOfCards > i; i++){
             Card remove = this.cardDeck.remove(0);
@@ -43,27 +40,20 @@ public class Deck {
         Deck finalDeck = new Deck(newDeck);
 
         return finalDeck;
-
     }
 
     public int size() {
 
         return this.cardDeck.size();
     }
-    
-
 
     public String toString(){
 
         String a = "A deck of " + this.cardDeck.size() + " with a top card of " + this.cardDeck.get(0);
         
         return a;
-    
-
-
     }
-    
-       
+     
     private void initilizeCards(String[] suits, int[] values) {
 
         this.cardDeck = new ArrayList<Card>();
@@ -72,26 +62,14 @@ public class Deck {
 
             for( String suit: suits){
                 Card card = new Card(value, suit);
-                this.cardDeck.add(card);
-                
-                
-
+                this.cardDeck.add(card);   
             }
-
         }
-        
-        
-
     }
 
     public void shuffle(){
 
-        Collections.shuffle(this.cardDeck);
-
-        return;
-
-        
-            
+        Collections.shuffle(this.cardDeck); 
     }
 
     public boolean hasNext(){
@@ -117,10 +95,6 @@ public class Deck {
             System.out.println(card);
         }
     }
-
-
-
-  
     }
 
     
